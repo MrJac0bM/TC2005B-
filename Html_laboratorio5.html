@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const taskInput = document.getElementById("taskInput");
+            const addTaskButton = document.getElementById("addTask");
+            const taskList = document.getElementById("taskList");
+
+            addTaskButton.addEventListener("click", () => {
+                if (taskInput.value.trim() !== "") {
+                    const li = document.createElement("li");
+                    li.className = "list-item"
+                    li.innerHTML = `${taskInput.value} <button class='button is-danger is-small ml-2' onclick='this.parentElement.remove()'>Eliminar</button>`;
+                    taskList.appendChild(li);
+                    taskInput.value = "";
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">To-Do List</a>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title has-text-centered">Lista de Tareas</h1>
+            <h2 class="subtitle has-text-centered">Organiza tus pendientes</h2>
+            
+            <div class="box">
+                <div class="field has-addons">
+                    <div class="control is-expanded">
+                        <input class="input" type="text" id="taskInput" placeholder="Nueva tarea">
+                    </div>
+                    <div class="control">
+                        <button class="button is-primary" id="addTask">Agregar</button>
+                    </div>
+                </div>
+                <ul id="taskList" class="mt-3"></ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>&copy; 2025 To-Do List - Organiza tu día</p>
+        </div>
+    </footer>
+</body>
+</html>
