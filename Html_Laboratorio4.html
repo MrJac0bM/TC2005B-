@@ -7,5 +7,43 @@
 </head>
 <body>
     <script src="Laboratorio4_Javascript.js"></script>
+    <section class="section">
+    <div class="container">
+        <h1 class="title has-text-centered">Preguntas y Respuestas</h1>
+        <div class="content">
+            <h2>¿Qué diferencias y semejanzas hay entre Java y JavaScript?</h2>
+            <p>Java es un lenguaje de programación orientado a objetos utilizado en aplicaciones empresariales y móviles, mientras que JavaScript es un lenguaje de scripting principalmente usado en desarrollo web para interactividad en el navegador.</p>
+            
+            <h2>¿Qué métodos tiene el objeto Date? (Menciona al menos 5)</h2>
+            <ul>
+                <li><code>getFullYear()</code> - Devuelve el año actual.</li>
+                <li><code>getMonth()</code> - Devuelve el mes (0-11).</li>
+                <li><code>getDate()</code> - Devuelve el día del mes.</li>
+                <li><code>getHours()</code> - Devuelve la hora.</li>
+                <li><code>getMinutes()</code> - Devuelve los minutos.</li>
+            </ul>
+            
+            <h2>¿Qué métodos tienen los arreglos? (Menciona al menos 5)</h2>
+            <ul>
+                <li><code>push()</code> - Agrega un elemento al final del arreglo.</li>
+                <li><code>pop()</code> - Elimina el último elemento del arreglo.</li>
+                <li><code>shift()</code> - Elimina el primer elemento del arreglo.</li>
+                <li><code>unshift()</code> - Agrega un elemento al inicio del arreglo.</li>
+                <li><code>forEach()</code> - Ejecuta una función por cada elemento del arreglo.</li>
+            </ul>
+            
+            <h2>¿Cómo se declara una variable con alcance local dentro de una función?</h2>
+            <p>Se puede declarar utilizando <code>let</code> o <code>const</code> dentro de una función. Por ejemplo:</p>
+            <pre><code>function miFuncion() {
+    let variableLocal = "Soy local";
+    console.log(variableLocal);
+}</code></pre>
+            
+            <h2>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</h2>
+            <p>El uso de variables globales puede causar conflictos si varias funciones modifican la misma variable, lo que puede generar errores difíciles de rastrear y problemas de mantenimiento en el código.</p>
+        </div>
+    </div>
+</section>
+
 </body>
 </html>
