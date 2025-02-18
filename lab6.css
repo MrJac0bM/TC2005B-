@@ -14,7 +14,7 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
+    height: 120vh
 }
 
 .container{
@@ -209,3 +209,18 @@ body{
     transform: translateX(200%);
 }
 
+section{
+    width: 60%;
+}
+
+.preguntas{
+    margin-top: 20px;
+}
+
+.preguntas h2{
+    text-align: center;
+}
+
+.preguntas{
+    text-justify:distribute;
+}
