@@ -3,7 +3,6 @@ const registerBtn = document.getElementById('register');
 const loginBtn = document.getElementById('login');
 const loginForm = document.getElementById('login-form');
 const errorMessage = document.getElementById('error-message');
-
 // Credenciales válidas
 const validUser = 'NEXO@gmail.com';
 const validPassword = 'CreandoElMañana';
