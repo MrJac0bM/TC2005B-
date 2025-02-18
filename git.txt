@@ -1,0 +1,4 @@
+//Agregar cambios en una transacción
+git add -Agregar
+//Se guardan los cambios se dla transaccion
+git commit -m "Describir acabmios imporativos
