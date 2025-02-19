@@ -32,3 +32,13 @@ loginForm.addEventListener('submit', (event) => {
         errorMessage.style.display = 'block'; 
     }
 });
+
+
+const btnColor = document.getElementById('btn-color-change');
+const texto = document.querySelector(".preguntas");
+
+btnColor.addEventListener('click',()=>{
+    let colores = ["red", "blue", "green", "purple", "orange"];
+    let colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
+    texto.style.color = colorAleatorio;
+})
