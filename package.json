@@ -1,0 +1,16 @@
+{
+  "name": "lab10",
+  "version": "1.0.0",
+  "description": "Laboratorio 11",
+  "main": "Laboratorio4_Javascript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hola": "echo \"Hola, Jacob!\""
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

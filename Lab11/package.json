@@ -1,0 +1,20 @@
+{
+  "name": "lab10",
+  "version": "1.0.0",
+  "description": "Laboratorio 11 ",
+  "main": "Laboratorio4_Javascript.js",
+  "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "hola": "echo \"Hola, Jacob!\""
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrJac0bM/TC2005B-.git"
+  },
+  "author": "Jacobb Espejel Guiza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrJac0bM/TC2005B-/issues"
+  },
+  "homepage": "https://github.com/MrJac0bM/TC2005B-#readme"
+}
