@@ -7,6 +7,10 @@ const bodyParser = require('body-parser');
 const datos = [];
 router.use(bodyParser.urlencoded({ extended: false }));
 
+// Credenciales válidas (deberían almacenarse en una base de datos)
+const validUser = 'NEXO@gmail.com';
+const validPassword = 'CreandoElMañana';
+
 
 router.get('/', (req, res,next) => {
     res.render('agrega_logIn')
