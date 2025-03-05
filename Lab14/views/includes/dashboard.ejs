@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - NEXO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <p class="title">Bienvenido a tu Dashboard,<%= username %></p>
+            <p class="subtitle">Aquí puedes ver información relevante</p>
+        </div>
+    </section>
+
+    <div class="container mt-5">
+        <div class="columns">
+            <div class="column is-one-third">
+                <div class="card">
+                    <div class="card-content">
+                        <p class="title">📝 Tareas Pendientes</p>
+                        <p class="subtitle">3 tareas por completar</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-one-third">
+                <div class="card">
+                    <div class="card-content">
+                        <p class="title">📅 Próxima Reunión</p>
+                        <p class="subtitle">Mañana a las 10:00 AM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-one-third">
+                <div class="card">
+                    <div class="card-content">
+                        <p class="title">📊 Progreso</p>
+                        <p class="subtitle">80% completado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form action="/logout" method="get">
+            <button class="button is-danger">Cerrar Sesión</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+

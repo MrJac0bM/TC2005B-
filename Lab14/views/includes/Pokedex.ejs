@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Oxanium', cursive;
+        }
+
+        body {
+            text-align: center;
+            background: linear-gradient(to bottom, #6ab7f5, #fff);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        main {
+            display: inline-block;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+
+        .pokemon_placeholder {
+            width: 200px;
+            height: 200px;
+            background: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        .pokemon_data {
+            font-weight: 600;
+            color: #3a444d;
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        .form {
+            margin-top: 15px;
+        }
+
+        .input_search {
+            width: 80%;
+            padding: 10px;
+            outline: none;
+            border: 2px solid #333;
+            border-radius: 8px;
+            font-weight: 600;
+            color: #3a444d;
+            font-size: 1rem;
+        }
+
+        .buttons {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .button {
+            padding: 10px 15px;
+            border: 2px solid #000;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            background-color: #444;
+            cursor: pointer;
+        }
+
+        .button:active {
+            background-color: #222;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="pokemon_placeholder">Pokémon</div>
+        <h1 class="pokemon_data">
+            <span class="pokemon_number">#</span> - 
+            <span class="pokemon_name">Nombre</span>
+        </h1>
+
+        <form class="form">
+            <input type="search" class="input_search" placeholder="Nombre o Número">
+        </form>
+
+        <div class="buttons">
+            <button class="button btn-prev">Prev &lt;</button>
+            <button class="button btn-next">Next &gt;</button>
+        </div>
+    </main>
+
+    <script>
+        const pokemonName = document.querySelector('.pokemon_name');
+        const pokemonNumber = document.querySelector('.pokemon_number');
+        const pokemonPlaceholder = document.querySelector('.pokemon_placeholder');
+        const form = document.querySelector('.form');
+        const buttonPrev = document.querySelector('.btn-prev');
+        const buttonNext = document.querySelector('.btn-next');
+        const input = document.querySelector('.input_search');
+
+        let searchPokemon = 1;
+
+        const fetchPokemon = async (pokemon) => {
+            try {
+                const APIResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+                if (APIResponse.ok) {
+                    return await APIResponse.json();
+                } else {
+                    return null;
+                }
+            } catch (error) {
+                console.error('Error fetching Pokémon:', error);
+                return null;
+            }
+        };
+
+        const renderPokemon = async (pokemon) => {
+            pokemonName.innerHTML = 'Loading...';
+            pokemonNumber.innerHTML = '';
+            pokemonPlaceholder.innerHTML = 'Loading...';
+            pokemonPlaceholder.style.backgroundImage = 'none';
+
+            const data = await fetchPokemon(pokemon);
+
+            if (data) {
+                pokemonName.innerHTML = data.name;
+                pokemonNumber.innerHTML = `#${data.id}`;
+                
+                if (data.sprites?.front_default) {
+                    pokemonPlaceholder.style.backgroundImage = `url(${data.sprites.front_default})`;
+                    pokemonPlaceholder.style.backgroundSize = 'cover';
+                    pokemonPlaceholder.style.backgroundPosition = 'center';
+                    pokemonPlaceholder.innerHTML = '';
+                } else {
+                    pokemonPlaceholder.innerHTML = 'No Image';
+                }
+
+                input.value = '';
+                searchPokemon = data.id;
+            } else {
+                pokemonPlaceholder.innerHTML = 'No encontrado :(';
+                pokemonName.innerHTML = 'No encontrado :(';
+                pokemonNumber.innerHTML = '';
+            }
+        };
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const searchValue = input.value.trim().toLowerCase();
+            if (searchValue) {
+                renderPokemon(searchValue);
+            }
+        });
+
+        buttonPrev.addEventListener('click', () => {
+            if (searchPokemon > 1) {
+                searchPokemon -= 1;
+                renderPokemon(searchPokemon);
+            }
+        });
+
+        buttonNext.addEventListener('click', () => {
+            searchPokemon += 1;
+            renderPokemon(searchPokemon);
+        });
+
+        renderPokemon(searchPokemon);
+    </script>
+</body>
+</html>

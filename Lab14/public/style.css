@@ -1,0 +1,73 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: Poppins, sans-serif;
+    color: #1E1E1E;
+    background-color: #CDCDCD;
+    background-image:
+        repeating-linear-gradient(
+            to right, transparent 0 150px, #0001 150px 151px
+        ),
+        repeating-linear-gradient(
+            to bottom, transparent 0 150px, #0001 150px 151px
+        ),
+        linear-gradient(to right, #CDCDCDcc, #CDCDCDcc),
+        url(images/bg.jpg);
+}
+
+
+
+.product {
+    position: absolute;
+    border: solid red;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 180px;
+    z-index: 2;
+    width: 280px;
+    height: 560px;
+    transition: 0.7s;
+}
+
+.product .soda {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-52%);
+    width: 280px;
+    aspect-ratio: 2 / 4;
+    background-size: auto 100%;
+    background-blend-mode: multiply;
+    mask-image: url(images/mockup.png);
+    mask-size: auto 100%;
+    transition: background-position 0.8s, opacity 0.8s;
+}
+
+.soda:nth-child(1) {
+    background-image: url(images/bg.png), url(images/mockup.png);
+    background-position: 0 0;
+    opacity: 1;
+}
+
+.soda:nth-child(2) {
+    background-image: url(images/bg2.png), url(images/mockup.png);
+    background-position: 500px 0;
+    opacity: 0;
+}
+
+.product:hover {
+    bottom: 300px;
+}
+
+.product:hover .soda:nth-child(1) {
+    opacity: 0;
+    background-position: 500px 0; /* Mueve el background hacia la izquierda */
+}
+
+.product:hover .soda:nth-child(2) {
+    opacity: 1;
+    background-position: 0 0; /* Centra el background */
+}
+
+

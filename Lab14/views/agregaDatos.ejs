@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Guardados</title>
+</head>
+<body>
+    <h1>Datos Guardados</h1>
+    <% if (datos.length > 0) { %>
+        <% for (let dato of datos) { %>
+            <div class="card">
+                <div class="card-content">
+                    <p class="title">
+                        <%= dato.nombre %>
+                    </p>
+                </div>
+            </div>
+        <% } %>
+    <% } else { %>
+        <p>No hay datos para mostrar.</p>
+    <% } %>
+</body>
+</html>
