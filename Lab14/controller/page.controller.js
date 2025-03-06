@@ -6,7 +6,7 @@ exports.get_logIn = (req, res) => { //Metodos /Get igual no hay cambios relativo
 
 exports.post_login = (req, res) => {
     // Validar credenciales (esto es un ejemplo)
-    
+    const { username, password } = req.body;
         res.cookie('usuario', username, { maxAge: 900000, httpOnly: true }); // Expira en 15 minutos
         res.redirect('/dashboard');
 };
