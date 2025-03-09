@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Guardados</title>
+    <!-- Incluye Bulma CSS desde un CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Estilos personalizados -->
+    <style>
+        body {
+            padding: 20px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+        .notification {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Título de la página -->
+        <h1 class="title is-1 has-text-centered">Datos Guardados</h1>
+
+        <!-- Notificación (si hay un mensaje en 'info') -->
+        <% if (info) { %>
+            <div class="notification is-info">
+                <%= info %>
+            </div>
+        <% } %>
+
+        <!-- Verifica si hay datos para mostrar -->
+        <% if (datos.length > 0) { %>
+            <!-- Itera sobre cada dato -->
+            <% for (let dato of datos) { %>
+                <!-- Tarjeta para cada dato -->
+                <div class="card">
+                    <div class="card-content">
+                        <p class="title is-4">
+                            <!-- Muestra el nombre del dato -->
+                            <%= dato.nombre %>
+                        </p>
+                    </div>
+                </div>
+            <% } %>
+        <% } else { %>
+            <!-- Mensaje si no hay datos -->
+            <div class="notification is-warning">
+                No hay datos para mostrar.
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>
