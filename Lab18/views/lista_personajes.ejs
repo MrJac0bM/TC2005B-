@@ -1,0 +1,36 @@
+<%- include('includes/_header.ejs') %>
+
+<% if(info != '') { %>
+    <div class="notification is-info">
+        <%= info %>
+    </div>
+<% } %>
+
+<a class="button is-primary" href="/personajes/agregar">
+    Agregar personaje
+</a>
+
+<br><br>
+
+<div class="columns">
+<% for (let personaje of personajes) { %>
+    <div class="column">
+        <div class="card">
+            <div class="card-content">
+                <p class="title">
+                    <a href="/personajes/<%= personaje.id %>"><%= personaje.nombre %></a>
+                </p>
+                <%= personaje.created_at %>
+            </div>
+        </div>
+    </div>
+<% } %>
+</div>
+
+<br><br>
+
+<a class="button is-primary" href="/personajes/agregar">
+    Agregar personaje
+</a>
+
+<%- include('includes/_footer.ejs') %>

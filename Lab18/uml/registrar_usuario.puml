@@ -1,0 +1,50 @@
+@startuml mvc_bd_secuencia
+header Registrar usuario
+autonumber
+
+actor navegador
+boundary users.routes
+boundary "vista login.ejs" as vista_signup
+control users.controller
+entity usuario 
+entity bcrypt 
+database mysql
+
+activate navegador
+navegador -> users.routes: GET /users/signup
+deactivate navegador
+activate users.routes
+users.routes -> users.controller: get_signup(request, response)
+deactivate users.routes
+activate users.controller
+users.controller -> vista_signup: response.render('login.ejs', { isNew: true })
+deactivate users.controller
+activate vista_signup
+vista_signup -> navegador: HTML
+deactivate vista_signup
+activate navegador
+navegador -> users.routes: POST /users/signup
+deactivate navegador
+activate users.routes
+users.routes -> users.controller: post_signup(request, response)
+deactivate users.routes
+activate users.controller
+users.controller -> usuario **: new Usuario(request.body.username, request.body.password)
+activate usuario
+users.controller ->> usuario: save()
+usuario ->> bcrypt: hash(this.password, 12)
+activate bcrypt
+bcrypt -->> usuario: password_cifrado
+deactivate bcrypt
+usuario ->> mysql: execute("INSERT INTO Usuarios(?, ?)", this.username, password_cifrado)
+activate mysql
+mysql -->> usuario: Query OK
+deactivate mysql
+usuario -->> users.controller: promesa
+deactivate usuario
+users.controller -> users.routes: response.redirect('/users/signin')
+deactivate users.controller
+activate users.routes
+deactivate users.routes
+
+@enduml
