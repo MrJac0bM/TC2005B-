@@ -1,0 +1,11 @@
+//Crear una nueva rama y cambiar a esa rama
+git checkout -b [nombre_rama_nueva]
+
+//Para cambiarse de rama
+git checkout [nombre_rama]
+
+//Agregar cambios a una transacción
+git add -A 
+
+//Se guardan los cambios de la transacción
+git commit -m "Describir cambios en imperativos"
