@@ -103,5 +103,5 @@ exports.get_lista = (req, res) => {
             // Renderiza la vista 'agregaDatos' y pasa los datos de los personajes y el mensaje.
             res.render('agregaDatos', { datos: rows, info: mensaje });
         })
-        // Nota: Falta un bloque '.catch' para manejar errores en la consulta a la base de datos.
+        // Nota: Falta un bloque .catch' para manejar errores en la consulta a la base de datos.
 };
