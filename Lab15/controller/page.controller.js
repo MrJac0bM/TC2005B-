@@ -100,7 +100,7 @@ exports.get_lista = (req, res) => {
             // Imprime en consola los datos obtenidos de la base de datos.
             console.log("Datos en get_lista:", rows);
 
-            // Renderiza la vista 'agregaDatos' y pasa los datos de los personajes y el mensaje.
+            // Renderiza la vista 'agregaDatos' y pasa los datos de los personajes  y el mensaje.
             res.render('agregaDatos', { datos: rows, info: mensaje });
         })
         // Nota: Falta un bloque .catch' para manejar errores en la consulta a la base de datos.
