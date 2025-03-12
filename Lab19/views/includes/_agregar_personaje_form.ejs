@@ -1,0 +1,18 @@
+<div class="columns">
+    <div class="column">
+      <form action="/personajes/agregar" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+        <label for="nombre" class="label">Nombre del personaje</label>
+        <input
+          class="input is-primary"
+          type="text"
+          placeholder="Cheewbaca"
+          id="nombre"
+          name="nombre"
+          required
+        />
+        <br><br>
+        <input type="submit" id="boton_personaje" class="button is-primary" value="Guardar personaje">
+      </form>
+    </div>
+</div>
