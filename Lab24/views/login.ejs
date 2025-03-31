@@ -1,3 +1,45 @@
 <%- include('includes/_header.ejs') %>
 <%- include('includes/_login_form.ejs') %>
 <%- include('includes/_footer.ejs') %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas sobre AJAX, RIAs y JSON</title>
+</head>
+<body>
+    <h1>Preguntas sobre AJAX, RIAs y JSON</h1>
+
+    <h2>¿Qué importancia tiene AJAX en el desarrollo de RIA's (Rich Internet Applications)?</h2>
+    <p>
+        AJAX (Asynchronous JavaScript and XML) es una tecnología fundamental en el desarrollo de RIAs (Rich Internet Applications) debido a su capacidad para crear aplicaciones web más interactivas y dinámicas. A continuación, se detallan su importancia:
+        <ul>
+            <li><b>Mejora la experiencia del usuario:</b> Permite actualizaciones de contenido sin necesidad de recargar la página completa, lo que resulta en una experiencia más fluida y receptiva. Facilita la creación de interfaces de usuario más interactivas y atractivas, similares a las de las aplicaciones de escritorio.</li>
+            <li><b>Aumenta la eficiencia:</b> Reduce el tráfico de la red al intercambiar solo los datos necesarios entre el cliente y el servidor. Disminuye los tiempos de carga de la página, lo que mejora el rendimiento general de la aplicación.</li>
+            <li><b>Permite la creación de aplicaciones más dinámicas:</b> Facilita la integración de contenido multimedia y la actualización de datos en tiempo real. Permite la creación de aplicaciones web más complejas y funcionales.</li>
+        </ul>
+    </p>
+
+    <h2>¿Qué implicaciones de seguridad tiene AJAX? ¿Dónde se deben hacer las validaciones de seguridad, del lado del cliente o del lado del servidor?</h2>
+    <p>
+        AJAX puede exponer la aplicación a diversas vulnerabilidades de seguridad, como:
+        <ul>
+            <li><b>Cross-Site Scripting (XSS):</b> Los datos enviados por AJAX pueden ser manipulados para inyectar código malicioso en la página web.</li>
+            <li><b>Cross-Site Request Forgery (CSRF):</b> Un atacante puede aprovechar las solicitudes AJAX para realizar acciones no autorizadas en nombre del usuario.</li>
+            <li><b>Exposición de datos sensibles:</b> Si no se implementan medidas de seguridad adecuadas, los datos intercambiados por AJAX pueden ser interceptados o manipulados.</li>
+        </ul>
+        Las validaciones de seguridad deben realizarse tanto del lado del cliente como del lado del servidor, pero la validación del lado del servidor es crucial.
+        <ul>
+            <li><b>Lado del cliente:</b> Las validaciones del lado del cliente pueden mejorar la experiencia del usuario al proporcionar retroalimentación inmediata sobre los errores de entrada. Sin embargo, no deben considerarse como la principal línea de defensa, ya que pueden ser fácilmente eludidas por un atacante.</li>
+            <li><b>Lado del servidor:</b> Las validaciones del lado del servidor son esenciales para garantizar la integridad y seguridad de los datos. Todas las validaciones críticas, como la autenticación, la autorización y la validación de datos sensibles, deben realizarse en el servidor.</li>
+        </ul>
+    </p>
+
+    <h2>¿Qué es JSON?</h2>
+    <p>
+        JSON (JavaScript Object Notation) es un formato de intercambio de datos ligero y fácil de leer y escribir. Se utiliza ampliamente en AJAX para transmitir datos entre el cliente y el servidor debido a su simplicidad y compatibilidad con JavaScript. JSON se basa en una estructura de pares clave-valor y matrices, lo que lo hace fácil de analizar y generar en diversos lenguajes de programación. JSON es un formato de texto, que es completamente independiente del lenguaje.
+    </p>
+</body>
+</html>
