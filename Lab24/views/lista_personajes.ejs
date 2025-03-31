@@ -1,0 +1,151 @@
+<%- include('includes/_header.ejs') %>
+
+<% if(info != '') { %>
+    <div class="notification is-info">
+        <%= info %>
+    </div>
+<% } %>
+
+<label for="buscar" class="label">Buscar</label>
+<input
+    id="buscar"
+    name="buscar"
+    class="input is-info"
+    type="text"
+    placeholder="Chewbacca"
+/>
+<br><br>
+
+<% for(let privilegio of privilegios) { %> 
+    <% if(privilegio.nombre == "crear personajes") { %>
+        <a class="button is-primary" href="/personajes/agregar">
+            Agregar personaje
+        </a>
+    <% } %>
+<% } %>
+
+<br><br>
+
+<div id="container_tarjetas">
+    <div class="columns">
+    <% let i = 0; %>
+    <% for (let personaje of personajes) { %>
+        <% if (i % 6 == 0) { %>
+            </div>
+            <div class="columns">
+        <% } %>
+        <% i++; %>
+        <div class="column">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img
+                            src="/uploads/<%= personaje.imagen %>"
+                            alt="Foto de <%= personaje.nombre %>"
+                        />
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-48x48">
+                                <img
+                                src="/uploads/<%= personaje.imagen %>"
+                                alt="Foto de <%= personaje.nombre %>"
+                                />
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <p class="title is-4">
+                                <a href="/personajes/<%= personaje.id %>"><%= personaje.nombre %></a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="content">
+                        <%= personaje.created_at %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% } %>
+    </div>
+</div>
+
+<br><br>
+
+<% for(let privilegio of privilegios) { %> 
+    <% if(privilegio.nombre == "crear personajes") { %>
+        <a class="button is-primary" href="/personajes/agregar">
+            Agregar personaje
+        </a>
+    <% } %>
+<% } %>
+
+<script>
+    const btn_buscar = document.getElementById("buscar");
+    btn_buscar.onkeyup = () => {
+        console.log(btn_buscar.value);
+        fetch('/personajes/buscar/' + btn_buscar.value, {
+            method: 'GET',
+        }).then((result) => {
+            return result.json();
+        }).then((data) => {
+            console.log(data);
+            
+            let html_container = `<div class="columns">`;
+            let i = 0; 
+            for (let personaje of data.personajes) { 
+                if (i % 6 == 0) { 
+                    html_container += `</div>
+                    <div class="columns">
+                    `;
+                } 
+                i++;
+                html_container += `<div class="column">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img
+                                        src="/uploads/${personaje.imagen}"
+                                        alt="Foto de ${personaje.nombre}"
+                                    />
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <figure class="image is-48x48">
+                                            <img
+                                            src="/uploads/${personaje.imagen}"
+                                            alt="Foto de ${personaje.nombre}"
+                                            />
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p class="title is-4">
+                                            <a href="/personajes/${personaje.id}">${personaje.nombre}</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="content">
+                                    ${personaje.created_at}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                }
+                html_container += `</div>`;
+
+            let tarjetas = document.getElementById('container_tarjetas');
+            tarjetas.innerHTML = html_container;
+
+        }).catch((error) => {
+            console.log(error);
+        });
+    }
+</script>
+
+<%- include('includes/_footer.ejs') %>

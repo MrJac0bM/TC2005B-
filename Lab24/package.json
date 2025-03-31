@@ -1,0 +1,36 @@
+{
+  "name": "chewy",
+  "version": "1.0.0",
+  "description": "Laboratorios de TC2005B feb-jun 2025 QRO",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/ejuarez/chewy.git"
+  },
+  "keywords": [
+    "TC2005B"
+  ],
+  "author": "Eduardo Juárez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://bitbucket.org/ejuarez/chewy/issues"
+  },
+  "homepage": "https://bitbucket.org/ejuarez/chewy#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^1.20.3",
+    "csurf": "^1.11.0",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "multer": "^1.4.5-lts.2",
+    "mysql2": "^3.13.0"
+  }
+}
