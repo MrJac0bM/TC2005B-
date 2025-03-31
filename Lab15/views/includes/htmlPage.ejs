@@ -16,5 +16,68 @@
             <br>
             <button type="submit">Enviar</button>
         </form>
+
+        <h1>Otras Formas de Autentificación</h1>
+
+    <p>
+        Además de otros métodos, existen diversas formas de autenticación que se utilizan para verificar la identidad de un usuario o dispositivo. A continuación, se describen algunas de las más comunes:
+    </p>
+
+    <h2>1. Autenticación multifactor (MFA):</h2>
+    <p>
+        Requiere que los usuarios proporcionen dos o más formas de identificación. Esto puede incluir un código enviado a un dispositivo móvil, una huella dactilar o un token de seguridad. MFA proporciona una capa adicional de seguridad y reduce significativamente el riesgo de acceso no autorizado.
+    </p>
+
+    <h2>2. Autenticación biométrica:</h2>
+    <p>
+        Utiliza características biológicas únicas para verificar la identidad de un usuario. Ejemplos incluyen huellas dactilares, reconocimiento facial, escaneo de iris y reconocimiento de voz. La biometría ofrece un alto nivel de seguridad, pero plantea preocupaciones sobre la privacidad y la posibilidad de falsificación.
+    </p>
+
+    <h2>3. Autenticación basada en certificados:</h2>
+    <p>
+        Utiliza certificados digitales para verificar la identidad de un usuario o dispositivo. Los certificados contienen información sobre la identidad del usuario y son emitidos por una autoridad de certificación de confianza. La autenticación basada en certificados se utiliza comúnmente en entornos empresariales y para acceder a redes privadas virtuales (VPN).
+    </p>
+
+    <h2>4. Autenticación basada en tokens:</h2>
+    <p>
+        Utiliza dispositivos o software que generan códigos de acceso únicos y temporales. Los tokens pueden ser físicos (como llaveros) o virtuales (como aplicaciones móviles). La autenticación basada en tokens proporciona una capa adicional de seguridad y es útil para acceder a sistemas sensibles.
+    </p>
+
+    <h2>5. Autenticación social:</h2>
+    <p>
+        Permite a los usuarios iniciar sesión en aplicaciones y sitios web utilizando sus cuentas de redes sociales (como Facebook, Google o Twitter). La autenticación social es conveniente para los usuarios, pero plantea preocupaciones sobre la privacidad y el control de los datos.
+    </p>
+
+    <p>
+        Es importante destacar que la elección del método de autenticación adecuado depende de los requisitos de seguridad y la conveniencia del usuario. En muchos casos, se recomienda utilizar una combinación de métodos para proporcionar una protección sólida.
+    </p>
+
+    <h1>Seguridad SQL</h1>
+
+    <h2>¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?</h2>
+    <p>
+        Escribir el código SQL únicamente en la capa del modelo ofrece varias ventajas, incluyendo:
+        <ul>
+            <li><b>Separación de preocupaciones:</b> Permite separar la lógica de acceso a datos de la lógica de presentación y la lógica de negocio, lo que mejora la mantenibilidad y la legibilidad del código.</li>
+            <li><b>Reutilización de código:</b> El código SQL se puede reutilizar en diferentes partes de la aplicación, lo que reduce la duplicación de código y facilita la actualización y el mantenimiento.</li>
+            <li><b>Seguridad mejorada:</b> Al centralizar el acceso a la base de datos en la capa del modelo, se pueden implementar medidas de seguridad más efectivas para prevenir ataques como la inyección SQL.</li>
+            <li><b>Pruebas unitarias:</b> Facilita la realización de pruebas unitarias para la capa de acceso a datos, lo que ayuda a garantizar la calidad y la fiabilidad del código.</li>
+        </ul>
+    </p>
+
+    <h2>¿Qué es SQL injection y cómo se puede prevenir?</h2>
+    <p>
+        La inyección SQL es una vulnerabilidad de seguridad que permite a los atacantes insertar código SQL malicioso en las consultas de la base de datos. Esto puede permitir a los atacantes acceder, modificar o eliminar datos no autorizados.
+    </p>
+    <p>
+        Se puede prevenir la inyección SQL mediante las siguientes medidas:
+        <ul>
+            <li><b>Validación de entrada:</b> Validar y filtrar todas las entradas de usuario antes de utilizarlas en las consultas SQL.</li>
+            <li><b>Consultas parametrizadas:</b> Utilizar consultas parametrizadas o procedimientos almacenados en lugar de concatenar cadenas para construir consultas SQL.</li>
+            <li><b>Principio de mínimo privilegio:</b> Asignar a los usuarios de la base de datos solo los permisos necesarios para realizar sus tareas.</li>
+            <li><b>Codificación de caracteres:</b> Codificar los caracteres especiales en las entradas de usuario para evitar que se interpreten como código SQL.</li>
+            <li><b>Actualizaciones de software:</b> Mantener el software de la base de datos y los controladores actualizados con los últimos parches de seguridad.</li>
+        </ul>
+    </p>
     </body>
     </html>
