@@ -1,3 +1,76 @@
 <%- include('includes/_header.ejs') %>
 <%- include('includes/_login_form.ejs') %>
 <%- include('includes/_footer.ejs') %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Acceso Basado en Roles (RBAC)</title>
+</head>
+<body>
+
+    <h1>Control de Acceso Basado en Roles (RBAC)</h1>
+
+    <p>
+        El control de acceso basado en roles (RBAC) es un método para regular el acceso a los sistemas informáticos o de red basado en los roles de los usuarios individuales dentro de una organización. En esencia, RBAC implica asignar permisos y privilegios a roles, en lugar de a usuarios individuales. Esto simplifica la gestión del acceso, ya que los administradores pueden asignar roles a los usuarios según sus responsabilidades laborales.
+    </p>
+
+    <h2>Características clave de RBAC:</h2>
+    <ul>
+        <li><b>Roles:</b> Se definen roles basados en las funciones laborales o responsabilidades dentro de una organización.</li>
+        <li><b>Permisos:</b> Se asignan permisos a los roles, determinando qué acciones pueden realizar los usuarios con ese rol.</li>
+        <li><b>Usuarios:</b> Los usuarios son asignados a roles, y heredan los permisos asociados a esos roles.</li>
+    </ul>
+
+    <h2>Ejemplos de sistemas:</h2>
+
+    <h3>1. Sistema que aplica RBAC: Salesforce</h3>
+    <p>
+        Salesforce, una plataforma de gestión de relaciones con clientes (CRM), utiliza ampliamente RBAC. Los administradores de Salesforce pueden crear roles como "Representante de ventas", "Gerente de ventas" o "Administrador del sistema", y asignar permisos específicos a cada rol.
+    </p>
+    <p>
+        Por ejemplo, un "Representante de ventas" puede tener permiso para crear y editar clientes potenciales, mientras que un "Gerente de ventas" puede tener acceso a informes y paneles de control de ventas.
+    </p>
+
+    <h4>Ventajas:</h4>
+    <ul>
+        <li><b>Gestión simplificada:</b> Facilita la administración de permisos, especialmente en organizaciones grandes.</li>
+        <li><b>Seguridad mejorada:</b> Reduce el riesgo de errores humanos en la asignación de permisos.</li>
+        <li><b>Cumplimiento:</b> Facilita el cumplimiento de normativas de seguridad y privacidad.</li>
+    </ul>
+
+    <h4>Desventajas:</h4>
+    <ul>
+        <li><b>Complejidad inicial:</b> La configuración inicial de roles y permisos puede ser compleja.</li>
+        <li><b>Rigidez:</b> Puede ser menos flexible en situaciones donde se requieren permisos muy específicos para usuarios individuales.</li>
+    </ul>
+
+    <h3>2. Sistema que no aplica RBAC: Sistemas de archivos tradicionales (por ejemplo, FAT32)</h3>
+    <p>
+        Los sistemas de archivos tradicionales, como FAT32, a menudo utilizan un modelo de control de acceso más simple basado en permisos individuales para usuarios o grupos.
+    </p>
+    <p>
+        En este modelo, se asignan permisos de lectura, escritura o ejecución directamente a usuarios o grupos para archivos y carpetas específicos.
+    </p>
+
+    <h4>Ventajas:</h4>
+    <ul>
+        <li><b>Simplicidad:</b> Es fácil de entender y configurar para usuarios individuales.</li>
+        <li><b>Flexibilidad:</b> Permite una granularidad muy fina en la asignación de permisos.</li>
+    </ul>
+
+    <h4>Desventajas:</h4>
+    <ul>
+        <li><b>Gestión compleja:</b> La administración de permisos se vuelve muy compleja en sistemas con muchos usuarios y archivos.</li>
+        <li><b>Riesgo de errores:</b> La asignación manual de permisos aumenta el riesgo de errores y brechas de seguridad.</li>
+        <li><b>Dificultad de auditoría:</b> Es difícil auditar y rastrear quién tiene acceso a qué recursos.</li>
+    </ul>
+
+    <p>
+        En resumen, RBAC ofrece una forma más eficiente y segura de gestionar el acceso en sistemas complejos, mientras que los modelos de control de acceso más simples pueden ser adecuados para entornos más pequeños y sencillos.
+    </p>
+
+</body>
+</html>
