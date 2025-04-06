@@ -1,0 +1,3 @@
+En la sección de la vista de Pokedex se encuentra el Fetch con la API de Pokemón 
+
+https://github.com/MrJac0bM/TC2005B-/commit/3f9689b42f4df1767754191dd92236dee1556111
